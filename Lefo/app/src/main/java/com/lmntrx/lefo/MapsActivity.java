@@ -79,7 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.maps);
         CON = this;
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -123,7 +123,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 }
                             });
                         }
-                        getFollowerLoc(map);
+                        //getFollowerLoc(map);
                         Log.d("TIMER", "Timer Running");
                     }
                 });
@@ -170,14 +170,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 1000, null);
         //---------------------------------------------
         //map.addMarker(new MarkerOptions().position(location).flat(true));
-        if (count == 0) {
+        //if (count == 0) {
             map.setTrafficEnabled(true);
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 16.5f));
             //map.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16.5f));
             map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition),
                     1000, null);
-            count = 1;
-        }
+          //  count = 1;
+        //}
     }
 
     @Override
@@ -185,7 +185,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //leaderMarkerOptions = new MarkerOptions().flat(true).title("Leader's Location").position(leaderLocation);
         //leaderMarker = map.addMarker(leaderMarkerOptions);
         getLeaderLoc(map);
-    }
+    }//FIX IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     public void reset() {
         if (resumed) {
